@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forfix Emulator | O jogo mais aguardado da década</title>
+  <meta name="description" content="Jogue Forfix com o nosso emulador. Planos semanal, mensal e anual." />
+  <meta name="theme-color" content="#21152E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Barra de XP (progresso de rolagem) -->
+  <div class="xp" aria-hidden="true">
+    <div class="xp__bar" id="xpBar"></div>
+    <span class="xp__lvl" id="xpLvl">LVL 1</span>
+  </div>
+
+  <header class="nav">
+    <a href="#inicio" class="logo">FOR<span>FIX</span></a>
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+    <nav class="nav__links" id="navLinks">
+      <a href="#jogo">O Jogo</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#planos">Planos</a>
+      <a href="#tutorial">Tutorial</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="hero__glow"></div>
+      <div class="container hero__content">
+        <p class="badge">🎮 PRESS START</p>
+        <h1>🎮 Forfix <em>ESTÁ CHEGANDO!</em> 🔥</h1>
+        <p class="hero__sub">🚀 O jogo mais aguardado da década está prestes a chegar!</p>
+
+        <div class="announce reveal">
+          <h2>⚡ FORFIX ESTÁ CHEGANDO ⚡</h2>
+          <p>📅 <strong>Lançamento:</strong> 01/03/2027</p>
+          <p>⏳ <strong>Pré-carregamento:</strong> 29/11</p>
+        </div>
+
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div><b id="cdD">00</b><span>dias</span></div>
+          <div><b id="cdH">00</b><span>horas</span></div>
+          <div><b id="cdM">00</b><span>min</span></div>
+          <div><b id="cdS">00</b><span>seg</span></div>
+        </div>
+        <p class="countdown__label">Contagem para o lançamento</p>
+
+        <div class="hero__cta">
+          <a href="#planos" class="btn btn--primary">⚔️ Escolher meu plano</a>
+          <a href="#tutorial" class="btn btn--ghost">📥 Como baixar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="jogo" class="section">
+      <div class="container">
+        <h2 class="title">🌟 Por que jogar com a gente?</h2>
+        <div class="grid grid--3">
+          <article class="card reveal"><span class="card__icon">⚡</span><h3>Performance máxima</h3><p>Emulador otimizado, programado do zero para rodar Forfix com fluidez.</p></article>
+          <article class="card reveal"><span class="card__icon">🛡️</span><h3>Estável e seguro</h3><p>Atualizações frequentes e suporte direto com o desenvolvedor.</p></article>
+          <article class="card reveal"><span class="card__icon">🏆</span><h3>Pronto para o lançamento</h3><p>Pré-carregue em 29/11 e comece a jogar no dia 01/03/2027.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA + VÍDEO -->
+    <section id="galeria" class="section section--alt">
+      <div class="container">
+        <h2 class="title">🎬 Veja Forfix em ação</h2>
+
+        <div class="video reveal">
+          <video controls preload="metadata" poster="assets/video/poster.jpg" playsinline>
+            <source src="assets/video/trailer.mp4" type="video/mp4" />
+            Seu navegador não suporta vídeo.
+          </video>
+        </div>
+
+        <div class="grid grid--3 gallery">
+          <figure class="reveal"><img loading="lazy" src="assets/img/print1.jpg" alt="Captura de tela de Forfix 1" /></figure>
+          <figure class="reveal"><img loading="lazy" src="assets/img/print2.jpg" alt="Captura de tela de Forfix 2" /></figure>
+          <figure class="reveal"><img loading="lazy" src="assets/img/print3.jpg" alt="Captura de tela de Forfix 3" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section id="planos" class="section">
+      <div class="container">
+        <h2 class="title">👑 Escolha seu plano</h2>
+        <p class="lead">Quanto maior o plano, maior o seu rank!</p>
+
+        <div class="grid grid--4">
+          <!-- Diário - esgotado -->
+          <article class="plan plan--soldout reveal">
+            <div class="plan__rank">🥉 INICIANTE</div>
+            <h3>Acesso Diário</h3>
+            <p class="plan__price">R$ 50<small>,00</small></p>
+            <ul>
+              <li>24h de acesso</li>
+              <li>Suporte básico</li>
+            </ul>
+            <button class="btn btn--disabled" disabled>ESGOTADO</button>
+            <div class="stamp">ESGOTADO</div>
+          </article>
+
+          <article class="plan reveal">
+            <div class="plan__rank">🥈 AVENTUREIRO</div>
+            <h3>Plano Semanal</h3>
+            <p class="plan__price">R$ 150<small>,00</small></p>
+            <ul>
+              <li>7 dias de acesso</li>
+              <li>Atualizações incluídas</li>
+              <li>Suporte prioritário</li>
+            </ul>
+            <button class="btn btn--primary buy" data-plan="Plano Semanal - R$150,00">Quero este</button>
+          </article>
+
+          <article class="plan plan--featured reveal">
+            <div class="plan__ribbon">⭐ MAIS POPULAR</div>
+            <div class="plan__rank">🥇 HERÓI</div>
+            <h3>Plano Mensal</h3>
+            <p class="plan__price">R$ 400<small>,00</small></p>
+            <ul>
+              <li>30 dias de acesso</li>
+              <li>Atualizações incluídas</li>
+              <li>Suporte prioritário</li>
+            </ul>
+            <button class="btn btn--primary buy" data-plan="Plano Mensal - R$400,00">Quero este</button>
+          </article>
+
+          <article class="plan reveal">
+            <div class="plan__rank">💎 LENDÁRIO</div>
+            <h3>Plano Anual</h3>
+            <p class="plan__price">R$ 700<small>,00</small></p>
+            <ul>
+              <li>365 dias de acesso</li>
+              <li>Todas as atualizações</li>
+              <li>Suporte VIP</li>
+            </ul>
+            <button class="btn btn--gold buy" data-plan="Plano Anual - R$700,00">Quero este</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TUTORIAL -->
+    <section id="tutorial" class="section section--alt">
+      <div class="container container--narrow">
+        <h2 class="title">📥 Missão: instalar o emulador</h2>
+        <p class="lead">Complete cada etapa e ganhe XP!</p>
+
+        <div class="quest">
+          <div class="quest__progress"><div id="questBar"></div></div>
+          <p class="quest__count"><span id="questDone">0</span>/5 missões concluídas</p>
+
+          <ol class="steps">
+            <li class="step reveal">
+              <label><input type="checkbox" class="step__check" />
+                <span><b>Baixe o instalador</b> — clique no botão abaixo e salve o arquivo no seu PC.</span>
+              </label>
+              <a href="#" class="btn btn--small btn--primary" id="downloadBtn">⬇️ Baixar emulador</a>
+            </li>
+            <li class="step reveal">
+              <label><input type="checkbox" class="step__check" />
+                <span><b>Extraia os arquivos</b> — clique com o botão direito no .zip e escolha "Extrair tudo".</span>
+              </label>
+            </li>
+            <li class="step reveal">
+              <label><input type="checkbox" class="step__check" />
+                <span><b>Execute como administrador</b> — abra o <code>ForfixEmu.exe</code> com botão direito → "Executar como administrador".</span>
+              </label>
+            </li>
+            <li class="step reveal">
+              <label><input type="checkbox" class="step__check" />
+                <span><b>Ative sua licença</b> — após comprar um plano, insira a chave que enviaremos pelo WhatsApp.</span>
+              </label>
+            </li>
+            <li class="step reveal">
+              <label><input type="checkbox" class="step__check" />
+                <span><b>Pré-carregue e jogue</b> — a partir de 29/11 baixe os arquivos do jogo. Lançamento em 01/03/2027!</span>
+              </label>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="logo">FOR<span>FIX</span> EMULATOR</p>
+    <p>© <span id="year"></span> Todos os direitos reservados.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
